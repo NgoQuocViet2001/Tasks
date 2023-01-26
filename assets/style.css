@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    --primary-color: rgb(255, 51, 153);
+}
+ul {
+    padding-left: 0;
+}
+
+
+#container {
+    max-width: 720px;
+    margin: 30px auto auto;
+    background-color: #fff;
+    box-shadow: 0 0 3px 3px rgba(255, 51, 153, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+#addtask {
+    width: 100%;
+    outline-width: 5px;
+    outline-color: var(--primary-color);
+    padding: 8px;
+    border: solid rgba(255, 51, 153, 0.2) 2px;
+    border-radius: 5px;
+}
+
+.status {
+    display: inline-block;
+    padding: 2px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.actived {
+    color: var(--primary-color);
+}
+
+.listTask{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.taskMenu {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 51, 153, 0.5);
+    margin-bottom: 8px;;
+    border-radius: 4px;
+    align-items: center;
+}
+
+
+.taskItem {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    font-size: 18px;
+    line-height: 18px;
+    flex: 1;
+    cursor: pointer;
+}
+
+input.checkbox {
+    width: 22px;
+    height: 22px ;
+}
+
+.label {
+    padding: 8px;
+    flex: 1;
+}
+
+.closeBtn {
+    color: red;
+    cursor: pointer;
+    padding: 8px;
+}
+
+#active, #completed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
