@@ -13,8 +13,8 @@ let allTaskListItems = []; // các task được thêm
 let completedTaskListItems = [];
 let activeTaskListItems = [];
 
-//hàm handler class 
-function handlerClass(element, className) {
+//hàm handle class 
+function handleClass(element, className) {
     if (!element.classList.contains(className))
         element.classList.add(className);
     else element.classList.remove(className);
@@ -59,8 +59,8 @@ function addNewTask(newtask, id) {
 }
 
 
-// handler sự kiện check
-function handlerCheck(block) {
+// handle sự kiện check
+function handleCheck(block) {
     block.onchange = function (e) {
         let checkedBlock = e.target.parentElement.parentElement;
         let index = checkedBlock.querySelector('.checkbox').getAttribute('id');
@@ -79,12 +79,12 @@ function handlerCheck(block) {
     //  +) completed lis task: completedTaskListItems
 }
 
-handlerCheck(allBlock);
-handlerCheck(activeBlock);
-handlerCheck(completedBlock);
+handleCheck(allBlock);
+handleCheck(activeBlock);
+handleCheck(completedBlock);
 
 //hàm xoá task
-function handlerRemove(block) {
+function handleRemove(block) {
     block.onclick = function (e) {
         let task = e.target.parentElement;
         if (e.target.closest('.closeBtn')) {
@@ -99,7 +99,7 @@ function handlerRemove(block) {
         }
     }
 }
-handlerRemove(allBlock);
+handleRemove(allBlock);
 
 function createNewList(block, arrays) {
     for (var array of arrays) {
@@ -132,7 +132,7 @@ function showBlock(block) {
 // }
 //click vào all
 allStatus.onclick = function (e) {
-    handlerClass(allStatus, 'actived');
+    handleClass(allStatus, 'actived');
     removeClass(activeStatus, 'actived');
     removeClass(completedStatus, 'actived');
     hideBlock(completedBlock);
@@ -144,7 +144,7 @@ allStatus.onclick = function (e) {
 
 //click vào active
 activeStatus.onclick = function (e) {
-    handlerClass(activeStatus, 'actived');
+    handleClass(activeStatus, 'actived');
     removeClass(allStatus, 'actived');
     removeClass(completedStatus, 'actived');
     hideBlock(completedBlock);
@@ -156,7 +156,7 @@ activeStatus.onclick = function (e) {
 
 //click vào completed
 completedStatus.onclick = function (e) {
-    handlerClass(completedStatus, 'actived');
+    handleClass(completedStatus, 'actived');
     removeClass(allStatus, 'actived');
     removeClass(activeStatus, 'actived');
     hideBlock(allBlock);
